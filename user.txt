@@ -1,0 +1,7 @@
+name,age,sex,phone number,ID card,date of birth,congenital disase
+chat,12,female,89841,1470,20/06/2542,none
+chat,13,female,89841,12470,27/11/2545,none
+test,10,male,1242,12425,9/20/1024,none
+test,10,male,1242,12425,9/20/1024,none
+Gus,22,male,89841,1470500148,20/06/2542,None
+Shiro,23,male,088,9,20/02/1024,None
