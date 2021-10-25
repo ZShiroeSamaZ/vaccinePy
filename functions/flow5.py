@@ -1,5 +1,4 @@
-from os import read
-from df_tools import *
+from functions.df_tools import *
 
 def printInfo(info):
     name,age,sex,phone_num,id_card,date_of_birth,disease = info
@@ -27,13 +26,13 @@ def registration_situation():
     id_card = int(input("ID card: "))
     df = readTxt("user.txt")
     query_by_id = df_filter(df, "ID card", id_card)
-    if(~query_by_id):
+    if(query_by_id is False):
         print("You have not registered")
     else:
-        printInfo(query_by_id)
+        printInfo(query_by_id.values[0])
         df = readTxt("schedual.txt")
         df = df_filter(df, "ID card", id_card)
-        id_card, vac_name, location, date, time = df
+        id_card, vac_name, location, date, time = df.values[0]
         print("Vaccine name: ", vac_name)
         print("Location: ", location)
         print("New date: ", date)
@@ -43,29 +42,34 @@ def registration_situation():
 
 
 def vac_history():
-    id_card = int(input("ID card: "))
+    id_card = (input("ID card: "))
     df = readTxt("user.txt")
-    query_by_id = df_filter(df, "ID card", id_card)
-    if(~query_by_id):
+    query_by_id = df_filter(df, "ID card", int(id_card))
+    if(query_by_id is False):
         print("You have not registered")
     else:
-        printInfo(query_by_id)
+        printInfo(query_by_id.values[0])
         df = readTxt("schedual.txt")
-        df = df_filter(df, "ID card", id_card)
-        id_card, vac_name, location, date, time = df
+        df = df_filter(df, "ID card", int(id_card))
+        id_card, vac_name, location, date, time = df.values[0]
         print("Vaccine name: ", vac_name)
         print("Location: ", location)
+
         df = readTxt("vaccine.txt")
         df = df_filter(df, "ID card", id_card)
-        id_card, first, second = df
+        id_card, first, second = df.values[0]
         print("First dose: ", first)
         print("Second dose: ", second)
+
     update_status("history")
 
-if __name__ == '__main__':
-    quantity_vac = input("quantity of vaccine: ")
+def main():
+    print_vaccine_amount()
     service_type = int(input("1 = Check the registration situation\n2 = Check vaccine history\n"))
     if(service_type == 1):
         registration_situation()
     else:
         vac_history()
+
+if __name__ == '__main__':
+    main()

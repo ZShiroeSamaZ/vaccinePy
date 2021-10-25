@@ -1,0 +1,5 @@
+ID card,first dose,second dose
+8,AstraZeneca,AstraZeneca
+9,-,-
+7,-,-
+1,AstraZeneca,AstraZeneca

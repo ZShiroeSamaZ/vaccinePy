@@ -1,8 +1,4 @@
-from df_tools import *
-
-def getpatient_info():
-    patient_status = input("Is the patient a bed-ridden patient? ")
-    return patient_status
+from functions.df_tools import *
 
 def select_vaccine():
     vaccine = int(input("1 = Sinovac\n2 = Sinopharm\n3 = AstraZeneca\n4 = Pfizer\n"))
@@ -14,7 +10,7 @@ def select_vaccine():
         return "AstraZeneca"
     else:
         return "Pfizer"
-        
+
 def select_Hospital():
     hospital = input("1 = Hospital1\n2 = Hospital2\n3 = Hospital3\n4 = Hospital4\n")
     if hospital == 1:
@@ -26,12 +22,15 @@ def select_Hospital():
     else:
         return "Hospital4"
 
-if __name__ == '__main__':
-    p_status = getpatient_info()
-    if(p_status == "yes"):
-        input("Your address: ")
+def main(id):
     vaccine = select_vaccine()
-    print(vaccine)
-    if(p_status != "yes"):
-        hospital = select_Hospital()
-        print(hospital)
+    print(f"{vaccine = }\n")
+    hospital = select_Hospital()
+    print(f"{hospital = }\n")
+    print("Vaccine name: ", vaccine)
+    print("Location: ", hospital)
+    updateWithCondition("schedual.txt", "ID card", id, "location", hospital)
+    updateWithCondition("schedual.txt", "ID card", id, "Vaccine name", vaccine)
+    
+if __name__ == '__main__':
+    main()

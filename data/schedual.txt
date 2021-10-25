@@ -1,0 +1,5 @@
+ID card,Vaccine name,location,date,time
+8,Pfizer,Hospital4,30,-
+9,-,-,1,-
+7,Sinovac,Hospital4,12,-
+1,Sinovac,Hospital4,30,-

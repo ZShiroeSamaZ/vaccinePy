@@ -1,6 +1,4 @@
-
-from df_tools import appendTxt, readTxt, writeTxt
-
+from functions.df_tools import *
 
 def select_vaccine(vaccine_amount):
     vaccine = int(input("1 = Sinovac\n2 = Sinopharm\n3 = AstraZeneca\n4 = Pfizer\n"))
@@ -15,10 +13,16 @@ def select_vaccine(vaccine_amount):
     else:
         return "Pfizer", vaccine_index
 
-if __name__ == '__main__':
+def main(id):
     vaccine_amount = readTxt("vaccine_amount.txt").values[-1]
+    print_vaccine_amount()
     vaccine, index = select_vaccine(vaccine_amount)
     print(vaccine)
+    updateWithCondition("vaccine.txt", "ID card", int(id), "first dose", vaccine)
+    updateWithCondition("vaccine.txt", "ID card", int(id), "second dose", vaccine)
     print(vaccine, "amont: ", vaccine_amount[index], "\n")
     df = appendTxt("vaccine_amount.txt", vaccine_amount, ["sinovac", "sinopharm", "astra", "pfizer"])
     print(df.iloc[-1])
+
+if __name__ == '__main__':
+    main()
