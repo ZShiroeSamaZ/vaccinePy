@@ -1,5 +1,11 @@
 from functions import *
+from functions.df_tools import *
 
+def init():
+    try:
+        readTxt("user.txt")
+    except:
+        init_txt.main()
 
 def main():
     print('********1**********')
@@ -19,4 +25,5 @@ def show():
 
 
 if __name__ == '__main__':
+    init()
     main() if (input("1 = main flow\nelse = show graph\n: ")== "1") else show()

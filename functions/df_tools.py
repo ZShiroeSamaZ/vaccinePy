@@ -33,7 +33,7 @@ def df_filter(df, key_column, condition_value):
         query = df.loc[(df[key_column] == condition_value)]
         query.drop(columns="ID card")
         query.values[0]
-    except IndexError:
+    except:
         pass
         # print("You have not registered")
         # exit()

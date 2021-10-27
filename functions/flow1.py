@@ -24,7 +24,7 @@ def register():
     age = input("Age: ")
     sex = input("Sex: ")
     phone_num = input("Phone Number: ")
-    id_card = input("ID card: ")
+    id_card = int(input("ID card: "))
     date_of_birth = input("Date Of Birth: ")
     disease = input("Congenital Disease: ")
     df_input = [name, age, sex, phone_num, id_card, date_of_birth, disease]
@@ -36,8 +36,9 @@ def reschedule():
     id_card = int(input("ID Card: "))
     df = readTxt("user.txt")
     query_by_id = df_filter(df, "ID card", id_card)
-    if(query_by_id is False):
+    if(query_by_id.empty):
         print("You are not registered")
+        exit()
         return False
     else:
         printInfo(query_by_id.values[-1])
@@ -46,8 +47,10 @@ def reschedule():
 
 def is_ID_Exist(id):
     user_df = readTxt("user.txt")
-    founded = df_filter(user_df, "ID card", id)
-    if(founded is not False):
+    founded = df_filter(user_df, "ID card", int(id))
+    print(founded)
+    print(founded.empty)
+    if(not founded.empty):
         return True
     else:
         return False
@@ -79,7 +82,8 @@ def main():
             new_date, id_card = info_data
             df = readTxt("user.txt")
             df = df_filter(df, "ID card", id_card)
-            printInfo(df.values[-1])
+            print(df)
+            printInfo(df.values[0])
             df = updateWithCondition(
                 "schedual.txt", "ID card", id_card, "date", new_date)
             df = df_filter(df, "ID card", id_card)

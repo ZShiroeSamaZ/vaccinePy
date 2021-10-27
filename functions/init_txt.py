@@ -1,7 +1,8 @@
 from functions.df_tools import *
-
+import os
 
 def main():
+    os.mkdir("./data")
     initTxt("user.txt", ['name', 'age', 'sex', "phone number",
                          "ID card", "date of birth", "congenital disase"])
     initTxt("schedual.txt", ["ID card",
