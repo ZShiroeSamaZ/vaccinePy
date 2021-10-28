@@ -64,7 +64,6 @@ def main():
         vaccine_template = ["ID card", "first dose", "second dose"]
         
         df_input, id_card = register()
-        print(is_ID_Exist(id_card))
         if(is_ID_Exist(id_card) is True):
             print("User with ID:", id_card, "Exist")
             exit()
