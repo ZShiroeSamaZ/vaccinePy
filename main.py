@@ -1,4 +1,5 @@
 from functions import *
+from functions import random_txt
 from functions.df_tools import *
 
 def init():
@@ -23,7 +24,15 @@ def main():
 def show():
     graph.main()
 
+def overWrite():
+    user_num = int(input("How many user you want to random? : "))
+    init_txt.main()
+    random_txt.main(user_num)
 
 if __name__ == '__main__':
     init()
-    main() if (input("1 = main flow\nelse = show graph\n: ")== "1") else show()
+    selected = int(input("1 = main flow\n2 = show graph\n99 = overWrite\n: "))
+    if(selected == 1): main()
+    elif(selected == 2): show()
+    elif(selected == 99): overWrite()
+    
