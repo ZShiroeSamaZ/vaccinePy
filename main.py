@@ -30,9 +30,10 @@ def overWrite(): # random data for testing
     random_txt.main(user_num)
 
 if __name__ == '__main__':
-    init()
-    selected = int(input("1 = main flow\n2 = show graph\n99 = overWrite\n: "))
-    if(selected == 1): main()
-    elif(selected == 2): show()
-    elif(selected == 99): overWrite() # can be deleted if not wanted
-    
+    while 1:
+        init()
+        selected = int(input("1 = main flow\n2 = show graph\n99 = overWrite\n0 = exit\n : "))
+        if(selected == 1): main()
+        elif(selected == 2): show()
+        elif(selected == 99): overWrite() # can be deleted if not wanted
+        elif(selected == 0): exit()

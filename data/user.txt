@@ -1,11 +1,11 @@
 name,age,sex,phone number,ID card,date of birth,congenital disase
-Charles Ramirez,59,male,84980353,0,28/5/1962,None
-Mark Lacey,22,male,85257280,1,23/9/1962,None
-Avery Thomas,22,male,85180459,2,1/6/1999,None
-Wayne Walker,35,male,86786592,3,27/12/1986,None
-Roy Keirstead,46,male,80305045,4,15/12/1975,None
-Harmony Young,59,female,87679740,5,8/6/1962,None
-Shannon Barb,24,female,88437843,6,22/5/1997,None
-Carolyn Sheperd,42,female,81014017,7,27/4/1979,None
-Gena Wescott,46,female,83578649,8,26/11/1975,None
-Linda Wimbush,29,female,080600049,9,12/5/1992,None
+Don Dreesman,26,male,Tel.043081455,0,1/5/1995,None
+Eugene Mayes,39,male,Tel.068199640,1,22/6/1982,None
+Ann Laws,37,female,Tel.036204766,2,3/8/1984,None
+Jessica King,11,female,Tel.072872864,3,28/8/2010,None
+Sam Fisher,38,male,Tel.073369573,4,1/11/1983,None
+John Stclair,24,male,Tel.042484788,5,25/11/1997,None
+Reginald Merrill,31,male,Tel.069382153,6,12/1/1990,None
+Robert Whitty,36,male,Tel.061966695,7,30/5/1985,None
+Christy Fleming,45,female,Tel.025014978,8,18/2/1976,None
+John Smith,21,male,Tel.094571200,9,30/4/2000,None

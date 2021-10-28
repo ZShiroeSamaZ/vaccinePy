@@ -1,12 +1,11 @@
 ID card,first dose,second dose
 0,Sinovac,Sinovac
 1,Sinovac,Sinovac
-2,AstraZeneca,AstraZeneca
-3,AstraZeneca,AstraZeneca
-4,Sinovac,Sinovac
-5,Sinovac,Sinovac
-6,AstraZeneca,AstraZeneca
-7,Sinovac,Sinovac
+2,Pfizer,Pfizer
+3,Sinovac,Sinovac
+4,Pfizer,Pfizer
+5,AstraZeneca,AstraZeneca
+6,Sinovac,Sinovac
+7,Sinopharm,Sinopharm
 8,AstraZeneca,AstraZeneca
-9,Sinovac,Sinovac
-10,Pfizer,Pfizer
+9,Pfizer,Pfizer

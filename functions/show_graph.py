@@ -92,7 +92,6 @@ def show_graph(seleted_graph):
         print("Amount of people of Registrants by age.")
         vaccine_by_age = user.join(vaccine, lsuffix='_caller', rsuffix='_other')
         vaccine_by_age = vaccine_by_age.filter(items=['first dose', 'age']).groupby(['first dose', 'age']).size().reset_index(name='counts')
-        vaccine_by_age.pivot(index='age', columns='first dose', values='counts').plot(kind='bar')
         ax = vaccine_by_age.pivot(index='age', columns='first dose', values='counts').plot(kind='bar')
         ax.set_xlabel("Age (years)")
         ax.set_ylabel("Amount of people")
