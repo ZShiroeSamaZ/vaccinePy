@@ -11,11 +11,11 @@ def show_graph(seleted_graph):
         df.plot(x ='age', y='counts', kind = 'bar')
         plt.show()
     elif seleted_graph == 2: 
-        f = readTxt('user.txt')
+        f = readTxt('schedual.txt')
         print("Amount of people of Reschedule in the same day.")
-        data = f.groupby(['age']).size().reset_index(name='counts')
-        df = pd.DataFrame(data ,columns=['age','counts'])
-        df.plot(x ='age', y='counts', kind = 'bar')
+        data = f.groupby(['date']).size().reset_index(name='counts')
+        df = pd.DataFrame(data ,columns=['date','counts'])
+        df.plot(x ='date', y='counts', kind = 'bar')
         plt.show()
 
 
