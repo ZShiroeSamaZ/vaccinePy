@@ -3,3 +3,4 @@ Shiro,12,male,89,8,20/06/2542,None
 Kuro,30,male,891,9,20/06/2542,None
 Yellow,13,male,98,7,10,None
 test,15,adq,21,1,00,None
+meen,15,adq,21,1,00,None
