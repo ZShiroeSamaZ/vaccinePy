@@ -3,6 +3,3 @@ ID card,first dose,second dose
 9,-,-
 7,-,-
 1,AstraZeneca,AstraZeneca
-1,-,-
-1,-,-
-1,-,-
