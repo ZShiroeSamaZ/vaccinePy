@@ -16,8 +16,8 @@ def user(number):
         name = names.get_full_name(gender=gender)
         age = ran_range(10, 60)
         phone = ""
-        ph_no = ["0", "8"]
-        for i in range(1, 8):
+        ph_no = ["Tel.0"]
+        for _ in range(1, 9):
             ph_no.append(str(ran_range(0, 9)))
         phone = phone.join(ph_no)
         day = str(ran_range(1, 30))
