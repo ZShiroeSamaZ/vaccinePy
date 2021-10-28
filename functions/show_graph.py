@@ -79,11 +79,9 @@ def show_graph(seleted_graph):
     elif seleted_graph == 5: 
         vaccine = readTxt('vaccine.txt')
         print("Amount of people of Registrants with vaccine.")
-        vaccine = vaccine.groupby(['first dose', 'ID card']).size().reset_index(name='counts')
-        print(vaccine)
-        # vaccine.pivot(index='age', columns='first dose', values='counts').plot(kind='bar')
-        # plt.title("Amount of people of Registrants with vaccine.")
-        # plt.show()
+        vaccine = vaccine.groupby(['first dose', 'second dose']).size().reset_index(name='counts')
+        vaccine.plot(x ='first dose', y='counts', kind = 'bar')
+        plt.show()
 
 
 def main():

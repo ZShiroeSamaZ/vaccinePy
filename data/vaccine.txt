@@ -9,3 +9,4 @@ ID card,first dose,second dose
 7,Sinovac,Sinovac
 8,AstraZeneca,AstraZeneca
 9,Sinovac,Sinovac
+10,Pfizer,Pfizer
