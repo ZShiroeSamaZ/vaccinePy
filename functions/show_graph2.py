@@ -14,13 +14,20 @@ def show_graph(seleted_graph):
         print("Location with Amount of people of Registrants.")
         data = f.groupby(['location']).size().reset_index(name='counts')
         df = pd.DataFrame(data ,columns=['location','counts'])
-        df.plot(x ='location', y='counts', kind = 'bar')
+        ax = df.plot(x ='location', y='counts', kind = 'bar')
+        ax.set_xlabel("Location")
+        ax.set_ylabel("Amount of people")
+        for container in ax.containers:
+            ax.bar_label(container)
         plt.show()
     elif seleted_graph == 7: 
         f = readTxt('schedual.txt')
         print("Amount of vaccine of Registrants on the same day.")
         data = f.filter(items=['Vaccine name', 'date']).groupby(['date', 'Vaccine name']).size().reset_index(name='counts')
-        data.pivot(index='date', columns='Vaccine name', values='counts').plot(kind='bar')
+        ax = data.pivot(index='date', columns='Vaccine name', values='counts').plot(kind='bar')
+        ax.set_ylabel("Amount of vaccine of Registrants (Person )")
+        for container in ax.containers:
+            ax.bar_label(container)
         plt.show()
     elif seleted_graph == 8: 
         f = readTxt("vaccine_amount.txt")
@@ -31,7 +38,10 @@ def show_graph(seleted_graph):
         bar_plot(ax, data, group_stretch=0.8, bar_stretch=0.95, legend=True,
                 x_labels=True, label_fontsize=8, barlabel_offset=0.05,
                 bar_labeler=lambda k, i, s: str(round(s, 3)))
+        ax.set_xlabel("Vaccine name")
+        ax.set_ylabel("Amount of vaccine (Dose)")
         fig.show()
+
         plt.show() 
     elif seleted_graph == 9:
         f = readTxt("situation_status.txt")
@@ -39,7 +49,11 @@ def show_graph(seleted_graph):
         registration = f.filter(items=['registration', 'date']).groupby(['date']).aggregate("sum")
         df = pd.DataFrame(registration ,columns=['registration'])
         df = df.drop(df[df.registration < 1].index)
-        df.plot(y='registration', kind = 'bar', use_index = True)
+        ax = df.plot(y='registration', kind = 'bar', use_index = True)
+        ax.set_xlabel("Date")
+        ax.set_ylabel("Number of round")
+        for container in ax.containers:
+            ax.bar_label(container)
         plt.show() 
     elif seleted_graph == 10:
         f = readTxt("situation_status.txt")
@@ -47,7 +61,11 @@ def show_graph(seleted_graph):
         history = f.filter(items=['history', 'date']).groupby(['date']).aggregate("sum")
         df = pd.DataFrame(history ,columns=['history'])
         df = df.drop(df[df.history < 1].index)
-        df.plot(y='history', kind = 'bar', use_index = True)
+        ax = df.plot(y='history', kind = 'bar', use_index = True)
+        ax.set_xlabel("Date")
+        ax.set_ylabel("Number of round")
+        for container in ax.containers:
+            ax.bar_label(container)
         plt.show() 
 
 def main():
