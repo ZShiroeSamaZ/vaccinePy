@@ -1,6 +1,6 @@
 name,age,sex,phone number,ID card,date of birth,congenital disase
 Charles Ramirez,59,male,84980353,0,28/5/1962,None
-Mark Lacey,22,male,85257280,1,23/9/1999,None
+Mark Lacey,22,male,85257280,1,23/9/1962,None
 Avery Thomas,22,male,85180459,2,1/6/1999,None
 Wayne Walker,35,male,86786592,3,27/12/1986,None
 Roy Keirstead,46,male,80305045,4,15/12/1975,None
