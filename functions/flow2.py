@@ -30,14 +30,13 @@ def main(id):
     p_status = getpatient_info()
     if(p_status == "yes"):
         address = input("Your address: ")
-        # print(f"{id = }")
         updateWithCondition("schedual.txt", "ID card", id, "location", address)
     vaccine = select_vaccine()
-    print(vaccine)
+    print(f"{vaccine = }")
     updateWithCondition("schedual.txt", "ID card", id, "Vaccine name", vaccine)
     if(p_status != "yes"):
         hospital = select_Hospital()
-        print(hospital)
+        print(f"{hospital = }")
         updateWithCondition("schedual.txt", "ID card", id, "location", hospital)
 
 if __name__ == '__main__':

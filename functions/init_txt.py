@@ -2,7 +2,7 @@ from functions.df_tools import *
 import os
 from datetime import date
 
-def datenow():
+def datenow(): # get this date
     day = str(date.today().day)
     month = str(date.today().month)
     year = str(date.today().year)
@@ -11,10 +11,10 @@ def datenow():
     
 def main():
     try:
-        os.mkdir("./data")
+        os.mkdir("./data") # create data folder if not exist
     except:
         pass
-    
+    # init all dataframe in data folder
     initTxt("user.txt", ['name', 'age', 'sex', "phone number",
                          "ID card", "date of birth", "congenital disase"])
     initTxt("schedual.txt", ["ID card",

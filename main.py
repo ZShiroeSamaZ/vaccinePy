@@ -8,7 +8,7 @@ def init():
     except:
         init_txt.main()
 
-def main():
+def main(): # Each Flow will be seperate with print('********n**********')
     print('********1**********')
     id_card = f1.main()
     print('********2**********')
@@ -21,10 +21,10 @@ def main():
     f5.main()
 
 
-def show():
+def show(): # call a show graph func
     graph.main()
 
-def overWrite():
+def overWrite(): # random data for testing
     user_num = int(input("How many user you want to random? : "))
     init_txt.main()
     random_txt.main(user_num)
@@ -34,5 +34,5 @@ if __name__ == '__main__':
     selected = int(input("1 = main flow\n2 = show graph\n99 = overWrite\n: "))
     if(selected == 1): main()
     elif(selected == 2): show()
-    elif(selected == 99): overWrite()
+    elif(selected == 99): overWrite() # can be deleted if not wanted
     
