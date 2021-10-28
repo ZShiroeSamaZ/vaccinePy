@@ -1,6 +1,14 @@
 from functions.df_tools import *
 import os
+from datetime import date
 
+def datenow():
+    day = str(date.today().day)
+    month = str(date.today().month)
+    year = str(date.today().year)
+    date_now = day+"/"+month+"/"+year
+    return date_now
+    
 def main():
     try:
         os.mkdir("./data")
@@ -16,7 +24,6 @@ def main():
     appendTxt("vaccine_amount.txt", [1000000, 1000000, 1000000, 1000000], [
               "sinovac", "sinopharm", "astra", "pfizer"])
     initTxt("situation_status.txt", ["registration", "history"])
-    appendTxt("situation_status.txt", [0, 0], ["registration", "history"])
 
 
 if __name__ == '__main__':

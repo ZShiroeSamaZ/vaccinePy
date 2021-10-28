@@ -56,13 +56,25 @@ def vaccine(number):
         to_write = [id, selected_vac, selected_vac]
         appendTxt("vaccine.txt", to_write, vaccine_template)
 
+def situation_status(number):
+    template = ["registration","history","date"]
+    for _ in range(number):    
+        update_type = [[0,1], [1,0]]
+        update_type = update_type[ran_range(0, 1)]
+        day = str(ran_range(1, 30))
+        month = str(ran_range(1, 12))
+        year = str(date.today().year + ran_range(0, 1))
+        date_schedual = day+"/"+month+"/"+year
 
+        to_write = [update_type[0], update_type[1], date_schedual]
+        appendTxt("situation_status.txt", to_write, template)
 
 
 def main(num):
     user(num)
     schedual(num)
     vaccine(num)
+    situation_status(num)
 
 
 if __name__ == '__main__':

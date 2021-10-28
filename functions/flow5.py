@@ -1,4 +1,5 @@
 from functions.df_tools import *
+from datetime import date
 
 def printInfo(info):
     name,age,sex,phone_num,id_card,date_of_birth,disease = info
@@ -11,22 +12,30 @@ def printInfo(info):
     print("Date Of Birth: ", date_of_birth)
     print("Congenital Disease: ", disease)
 
+def datenow():
+    day = str(date.today().day)
+    month = str(date.today().month)
+    year = str(date.today().year)
+    date_now = day+"/"+month+"/"+year
+    return date_now
 
 def update_status(type):
-    situation, history = readTxt("situation_status.txt").values[-1]
+    data = readTxt("situation_status.txt")
+    situation, history, _ = data.sum()
     if(type == "situation"):
         situation += 1
         print("registration situation =", situation)
+        appendTxt("situation_status.txt", [1, 0, datenow()], ["registration", "history", "date"])
     else:
         history += 1
         print("vaccination history =", history)
-    appendTxt("situation_status.txt", [situation, history], ["registration", "history"])
+        appendTxt("situation_status.txt", [0, 1, datenow()], ["registration", "history", "date"])
 
 def registration_situation():
     id_card = int(input("ID card: "))
     df = readTxt("user.txt")
     query_by_id = df_filter(df, "ID card", id_card)
-    if(query_by_id is False):
+    if(query_by_id.empty):
         print("You have not registered")
     else:
         printInfo(query_by_id.values[0])
@@ -45,7 +54,7 @@ def vac_history():
     id_card = (input("ID card: "))
     df = readTxt("user.txt")
     query_by_id = df_filter(df, "ID card", int(id_card))
-    if(query_by_id is False):
+    if(query_by_id.empty):
         print("You have not registered")
     else:
         printInfo(query_by_id.values[0])

@@ -35,9 +35,6 @@ def df_filter(df, key_column, condition_value):
         query.values[0]
     except:
         pass
-        # print("You have not registered")
-        # exit()
-        # raise FileNotFoundError("Not found user with selected ID")
     return query
 
 def print_vaccine_amount():
