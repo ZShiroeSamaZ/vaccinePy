@@ -1,12 +1,20 @@
 from functions.df_tools import *
 import os
+from datetime import date
 
+def datenow(): # get this date
+    day = str(date.today().day)
+    month = str(date.today().month)
+    year = str(date.today().year)
+    date_now = day+"/"+month+"/"+year
+    return date_now
+    
 def main():
     try:
-        os.mkdir("./data")
+        os.mkdir("./data") # create data folder if not exist
     except:
         pass
-    
+    # init all dataframe in data folder
     initTxt("user.txt", ['name', 'age', 'sex', "phone number",
                          "ID card", "date of birth", "congenital disase"])
     initTxt("schedual.txt", ["ID card",
@@ -16,7 +24,6 @@ def main():
     appendTxt("vaccine_amount.txt", [1000000, 1000000, 1000000, 1000000], [
               "sinovac", "sinopharm", "astra", "pfizer"])
     initTxt("situation_status.txt", ["registration", "history"])
-    appendTxt("situation_status.txt", [0, 0], ["registration", "history"])
 
 
 if __name__ == '__main__':

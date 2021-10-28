@@ -39,7 +39,6 @@ def reschedule():
     if(query_by_id.empty):
         print("You are not registered")
         exit()
-        return False
     else:
         printInfo(query_by_id.values[-1])
         new_date = input("New Date: ")
@@ -48,8 +47,6 @@ def reschedule():
 def is_ID_Exist(id):
     user_df = readTxt("user.txt")
     founded = df_filter(user_df, "ID card", int(id))
-    print(founded)
-    print(founded.empty)
     if(not founded.empty):
         return True
     else:
