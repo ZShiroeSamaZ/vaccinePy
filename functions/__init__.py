@@ -5,4 +5,3 @@ from functions import flow3 as f3
 from functions import flow4 as f4
 from functions import flow5 as f5
 from functions import show_graph as graph
-from functions import show_graph2 as graph2
